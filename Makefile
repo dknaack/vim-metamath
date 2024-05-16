@@ -7,7 +7,7 @@ DESTDIR=
 
 install:
 	mkdir -p "$(VIMDIR)"
-	$(CP) $(CP_OPTIONS) vim/* "$(DESTDIR)$(VIMDIR)"
+	$(CP) $(CP_OPTIONS) ftdetect syntax "$(DESTDIR)$(VIMDIR)"
 
 # This installs in the *Windows* area when running on Cygwin.
 install_windows:
@@ -21,9 +21,9 @@ uninstall:
 install_symlinks:
 	mkdir -p "$(DESTDIR)$(VIMDIR)/ftdetect"
 	mkdir -p "$(DESTDIR)$(VIMDIR)/syntax"
-	ln -s "$(PWD)"/vim/ftdetect/metamath.vim \
+	ln -s "$(PWD)"/ftdetect/metamath.vim \
 	      "$(DESTDIR)$(VIMDIR)"/ftdetect/metamath.vim 
-	ln -s "$(PWD)"/vim/syntax/metamath.vim \
+	ln -s "$(PWD)"/syntax/metamath.vim \
 	      "$(DESTDIR)$(VIMDIR)"/syntax/metamath.vim 
 
 check:
